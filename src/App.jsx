@@ -59,13 +59,13 @@ function App() {
         </ul>
 
         <a
-          href="https://wa.me/919949452911"
-          className="nav-wa-btn"
-          target="_blank"
-          rel="noreferrer"
-        >
-          📱 Order Now
-        </a>
+  href="https://wa.me/919949452911?text=Hi%20Vee%20Pickles,%20I%20would%20like%20to%20order%20your%20homemade%20pickles.%20Please%20share%20available%20products%20and%20prices."
+  className="nav-wa-btn"
+  target="_blank"
+  rel="noreferrer"
+>
+  📱 Order Now
+</a>
 
       </nav>
 
@@ -106,14 +106,14 @@ function App() {
             Traditional Recipe | Premium Quality | 100% Homemade
           </p>
 
-          <a
-            href="https://wa.me/919949452911"
-            className="hero-wa-btn"
-            target="_blank"
-            rel="noreferrer"
-          >
-            📱 Order on WhatsApp
-          </a>
+         <a
+  href="https://wa.me/919949452911?text=Hi%20Vee%20Pickles,%20I%20would%20like%20to%20order%20your%20homemade%20pickles.%20Please%20share%20available%20products%20and%20prices."
+  className="nav-wa-btn"
+  target="_blank"
+  rel="noreferrer"
+>
+  📱 Order Now
+</a>
 
         </div>
 
@@ -269,13 +269,13 @@ function App() {
               </p>
 
               <a
-                href="https://wa.me/919949452911"
-                className="order-btn"
-                target="_blank"
-                rel="noreferrer"
-              >
-                🛒 Order Now on just Rs.650/-
-              </a>
+  href="https://wa.me/919949452911?text=Hi%20Vee%20Pickles,%20I%20want%20to%20order%20Chicken%20Pickle."
+  className="order-btn"
+  target="_blank"
+  rel="noreferrer"
+>
+  🛒 Order Now on just Rs.650/-
+</a>
 
             </div>
 
@@ -339,13 +339,14 @@ function App() {
               </p>
 
               <a
-                href="https://wa.me/919949452911"
-                className="order-btn"
-                target="_blank"
-                rel="noreferrer"
-              >
-                🛒 Order Now on just Rs.750/-
-              </a>
+  href="https://wa.me/919949452911?text=Hi%20Vee%20Pickles,%20I%20want%20to%20order%20Chicken%20Gongura%20Pickle."
+  className="order-btn"
+  target="_blank"
+  rel="noreferrer"
+>
+  🛒 Order Now on just Rs.750/-
+</a>
+              
 
             </div>
 
@@ -376,13 +377,13 @@ function App() {
               </p>
 
               <a
-                href="https://wa.me/919949452911"
-                className="order-btn"
-                target="_blank"
-                rel="noreferrer"
-              >
-                🛒 Order Now on just Rs.950/-
-              </a>
+  href="https://wa.me/919949452911?text=Hi%20Vee%20Pickles,%20I%20want%20to%20order%20Mutton%20Gongura%20Pickle."
+  className="order-btn"
+  target="_blank"
+  rel="noreferrer"
+>
+  🛒 Order Now on just Rs.950/-
+</a>
 
             </div>
 

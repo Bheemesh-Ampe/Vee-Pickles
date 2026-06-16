@@ -1,0 +1,59 @@
+.order-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.order-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #d62828;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-form input,
+.order-form textarea,
+.order-form select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.order-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.order-form button {
+  background: #d62828;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.order-form button:hover {
+  background: #b71c1c;
+}
+
+.message {
+  margin-top: 15px;
+  font-weight: bold;
+  color: red;
+  background: #fff3f3;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}

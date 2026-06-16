@@ -1,0 +1,32 @@
+.admin-container {
+  padding: 30px;
+}
+
+.admin-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.admin-table th {
+  background: #d62828;
+  color: white;
+}
+
+.admin-table button {
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}

@@ -1,6 +1,12 @@
+import ProtectedRoute from "./ProtectedRoute";
+import AdminOrders from "./AdminOrders";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AdminPage from "./AdminPage";
+import OrderPage from "./OrderPage";
+import OrderForm from "./OrderForm";
 import "./App.css";
 
-function App() {
+function Website() {
   return (
     <>
 
@@ -58,13 +64,9 @@ function App() {
 
         </ul>
 
-        <a
-  href="https://wa.me/919949452911?text=Hi%20Vee%20Pickles,%20I%20would%20like%20to%20order%20your%20homemade%20pickles.%20Please%20share%20available%20products%20and%20prices."
-  className="nav-wa-btn"
-  target="_blank"
-  rel="noreferrer"
->
-  📱 Order Now
+        
+  <a href="/order" className="order-btn">
+  🛒 Order Online 
 </a>
 
       </nav>
@@ -106,14 +108,10 @@ function App() {
             Traditional Recipe | Premium Quality | 100% Homemade
           </p>
 
-         <a
-  href="https://wa.me/919949452911?text=Hi%20Vee%20Pickles,%20I%20would%20like%20to%20order%20your%20homemade%20pickles.%20Please%20share%20available%20products%20and%20prices."
-  className="nav-wa-btn"
-  target="_blank"
-  rel="noreferrer"
->
-  📱 Order Now
+         <a href="/order" className="order-btn">
+  🛒 Order Online
 </a>
+
 
         </div>
 
@@ -268,13 +266,8 @@ function App() {
                 Classic spicy chicken pickle made with authentic Indian spices.
               </p>
 
-              <a
-  href="https://wa.me/919949452911?text=Hi%20Vee%20Pickles,%20I%20want%20to%20order%20Chicken%20Pickle."
-  className="order-btn"
-  target="_blank"
-  rel="noreferrer"
->
-  🛒 Order Now on just Rs.750/- per Kg
+              <a href="/order" className="order-btn">
+  🛒 Order Online for just Rs.750 per KG
 </a>
 
             </div>
@@ -301,14 +294,9 @@ function App() {
                 Tangy and robust mutton pickle perfect with every meal.
               </p>
 
-              <a
-                href="https://wa.me/919949452911"
-                className="order-btn"
-                target="_blank"
-                rel="noreferrer"
-              >
-                🛒 Order Now on just Rs.950/- per Kg
-              </a>
+              <a href="/order" className="order-btn">
+  🛒 Order Online for just Rs.950 per KG
+</a>
 
             </div>
 
@@ -338,14 +326,10 @@ function App() {
                 Tangy gongura leaves with tender chicken and Andhra spices.
               </p>
 
-              <a
-  href="https://wa.me/919949452911?text=Hi%20Vee%20Pickles,%20I%20want%20to%20order%20Chicken%20Gongura%20Pickle."
-  className="order-btn"
-  target="_blank"
-  rel="noreferrer"
->
-  🛒 Order Now on just Rs.850/- per Kg
+             <a href="/order" className="order-btn">
+  🛒 Order Online for just Rs.850 per KG
 </a>
+
               
 
             </div>
@@ -376,14 +360,10 @@ function App() {
                 Homemade mutton pickle prepared with rich Andhra gongura flavors.
               </p>
 
-              <a
-  href="https://wa.me/919949452911?text=Hi%20Vee%20Pickles,%20I%20want%20to%20order%20Mutton%20Gongura%20Pickle."
-  className="order-btn"
-  target="_blank"
-  rel="noreferrer"
->
-  🛒 Order Now on just Rs.1150/- per Kg
+              <a href="/order" className="order-btn">
+  🛒 Order Online for just Rs.1150 per KG
 </a>
+
 
             </div>
 
@@ -392,7 +372,7 @@ function App() {
         </div>
 
       </section>
-
+          <OrderForm />
 
       {/* CONTACT SECTION */}
 
@@ -482,6 +462,7 @@ function App() {
 
       </section>
 
+        
 
       {/* FOOTER */}
 
@@ -496,5 +477,28 @@ function App() {
     </>
   );
 }
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+  <Route path="/" element={<Website />} />
+
+  <Route path="/admin" element={<AdminPage />} />
+
+  <Route
+    path="/dashboard"
+    element={
+      <ProtectedRoute>
+        <AdminOrders />
+      </ProtectedRoute>
+    }
+  />
+
+  <Route path="/order" element={<OrderPage />} />
+</Routes>
+    </BrowserRouter>
+  );
+}
+
 
 export default App;

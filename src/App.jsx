@@ -274,7 +274,7 @@ function App() {
   target="_blank"
   rel="noreferrer"
 >
-  🛒 Order Now on just Rs.650/-
+  🛒 Order Now on just Rs.750/- per Kg
 </a>
 
             </div>
@@ -307,7 +307,7 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
-                🛒 Order Now on just Rs.850/-
+                🛒 Order Now on just Rs.950/- per Kg
               </a>
 
             </div>
@@ -344,7 +344,7 @@ function App() {
   target="_blank"
   rel="noreferrer"
 >
-  🛒 Order Now on just Rs.750/-
+  🛒 Order Now on just Rs.850/- per Kg
 </a>
               
 
@@ -382,7 +382,7 @@ function App() {
   target="_blank"
   rel="noreferrer"
 >
-  🛒 Order Now on just Rs.950/-
+  🛒 Order Now on just Rs.1150/- per Kg
 </a>
 
             </div>

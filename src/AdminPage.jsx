@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "./config";
 
 function AdminPage() {
   const [username, setUsername] = useState("");
@@ -12,7 +13,7 @@ function AdminPage() {
 
     try {
       const res = await fetch(
-        "https://vee-pickles-backend.onrender.com/api/auth/login",
+        `${API_URL}/api/auth/login`,
         {
           method: "POST",
           headers: {

@@ -10,8 +10,15 @@ router.post("/", async (req, res) => {
   try {
     const order = new Order(req.body);
 
+    // Save order in MongoDB
     await order.save();
-    await sendOrderEmail(order);
+
+    // Try sending email
+    try {
+      await sendOrderEmail(order);
+    } catch (emailError) {
+      console.error("Email Error:", emailError);
+    }
 
     res.status(201).json({
       success: true,
@@ -19,7 +26,7 @@ router.post("/", async (req, res) => {
       order,
     });
   } catch (error) {
-    console.log(error);
+    console.error("Order Error:", error);
 
     res.status(500).json({
       success: false,

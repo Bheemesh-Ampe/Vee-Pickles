@@ -69,72 +69,95 @@ setLoading(false);
 }
   };
 
-  return (
-    <div id="order-form" className="order-container">
-      <h2>Place Your Order</h2>
+return (
+  <div id="order-form" className="order-container">
+    <h2>Place Your Order</h2>
 
-      <form onSubmit={handleSubmit} className="order-form">
-        <input
-          type="text"
-          name="customerName"
-          placeholder="Full Name"
-          value={formData.customerName}
-          onChange={handleChange}
-          required
-        />
+    <form
+      onSubmit={handleSubmit}
+      className="order-form"
+    >
+      <input
+        type="text"
+        name="customerName"
+        placeholder="Full Name"
+        value={formData.customerName}
+        onChange={handleChange}
+        required
+      />
 
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone Number"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-        />
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number"
+        value={formData.phone}
+        onChange={handleChange}
+        required
+      />
 
-        <textarea
-          name="address"
-          placeholder="Delivery Address"
-          value={formData.address}
-          onChange={handleChange}
-          required
-        />
+      <textarea
+        name="address"
+        placeholder="Delivery Address"
+        value={formData.address}
+        onChange={handleChange}
+        required
+      />
 
-        <select
-          name="product"
-          value={formData.product}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select Pickle</option>
-          <option>Chicken Pickle</option>
-          <option>Chicken Gongura Pickle</option>
-          <option>Mutton Pickle</option>
-          <option>Mutton Gongura Pickle</option>
-        </select>
+      <select
+        name="product"
+        value={formData.product}
+        onChange={handleChange}
+        required
+      >
+        <option value="">
+          Select Pickle
+        </option>
 
-        <input
-  type="number"
-  name="quantity"
-  placeholder="Enter Quantity (Kg)"
-  value={formData.quantity}
-  onChange={handleChange}
-  min="0.25"
-  step="0.25"
-  required
-/>
+        <option>
+          Chicken Pickle
+        </option>
 
-        <button type="submit" disabled={loading}>
-  {loading ? "Processing Order..." : "Place Order"}
-</button>
+        <option>
+          Chicken Gongura Pickle
+        </option>
 
-      {message && (
-        <p className="message">
-          {message}
-        </p>
-      )}
-    </div>
-  );
+        <option>
+          Mutton Pickle
+        </option>
+
+        <option>
+          Mutton Gongura Pickle
+        </option>
+      </select>
+
+      <input
+        type="number"
+        name="quantity"
+        placeholder="Enter Quantity (Kg)"
+        value={formData.quantity}
+        onChange={handleChange}
+        min="0.25"
+        step="0.25"
+        required
+      />
+
+      <button
+        type="submit"
+        disabled={loading}
+      >
+        {loading
+          ? "⏳ Processing Order..."
+          : "Place Order"}
+      </button>
+    </form>
+
+    {message && (
+      <p className="message">
+        {message}
+      </p>
+    )}
+  </div>
+);
 }
 
 export default OrderForm;

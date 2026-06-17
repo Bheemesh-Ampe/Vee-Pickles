@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
     console.log("ORDER SAVED:", order._id);
 
     // Email temporarily disabled
-    console.log("Email service disabled");
+   await sendOrderEmail(order);
 
     res.status(201).json({
       success: true,

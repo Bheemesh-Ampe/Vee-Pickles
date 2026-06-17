@@ -47,7 +47,9 @@ console.log("Response:", data);
 setLoading(false);
 
       if (data.success) {
-        setMessage("✅ Order placed successfully!");
+        setMessage(
+  "✅ Order placed successfully! We will contact you shortly."
+);
 
         setFormData({
           customerName: "",

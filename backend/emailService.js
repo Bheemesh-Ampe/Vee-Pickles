@@ -1,25 +1,24 @@
 require("dotenv").config();
-const nodemailer = require("nodemailer");
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const { Resend } = require("resend");
+
+const resend = new Resend(
+  process.env.RESEND_API_KEY
+);
 
 const sendOrderEmail = async (order) => {
-  await transporter.sendMail({
-    from: process.env.EMAIL_USER,
+  await resend.emails.send({
+    from: "onboarding@resend.dev",
     to: process.env.EMAIL_USER,
     subject: "🛒 New Vee Pickles Order",
-    text: `
-Customer: ${order.customerName}
-Phone: ${order.phone}
-Address: ${order.address}
-Product: ${order.product}
-Quantity: ${order.quantity}
+    html: `
+      <h2>New Order Received</h2>
+
+      <p><b>Customer:</b> ${order.customerName}</p>
+      <p><b>Phone:</b> ${order.phone}</p>
+      <p><b>Address:</b> ${order.address}</p>
+      <p><b>Product:</b> ${order.product}</p>
+      <p><b>Quantity:</b> ${order.quantity}</p>
     `,
   });
 };

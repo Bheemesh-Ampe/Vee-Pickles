@@ -13,18 +13,16 @@ router.post("/", async (req, res) => {
     // Save order in MongoDB
     await order.save();
 
-    // Try sending email
-    try {
-      await sendOrderEmail(order);
-    } catch (emailError) {
-      console.error("Email Error:", emailError);
-    }
+try {
+  await sendOrderEmail(order);
+} catch (emailError) {
+  console.error("Email Error:", emailError);
+}
 
-    res.status(201).json({
-      success: true,
-      message: "Order placed successfully",
-      order,
-    });
+res.status(201).json({
+  success: true,
+  message: "Order placed successfully",
+});
   } catch (error) {
     console.error("Order Error:", error);
 

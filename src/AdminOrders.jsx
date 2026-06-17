@@ -1,3 +1,4 @@
+import { API_URL } from "./config";
 import "./AdminOrders.css";
 import { useEffect, useState } from "react";
 

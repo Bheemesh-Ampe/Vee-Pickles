@@ -1,3 +1,4 @@
+import { API_URL } from "./config";
 import { useState } from "react";
 import "./OrderForm.css";
 
@@ -34,7 +35,11 @@ function OrderForm() {
         }
       );
 
-      const data = await response.json();
+     console.log("Status:", response.status);
+
+const data = await response.json();
+
+console.log("Response:", data);
 
       if (data.success) {
         setMessage("✅ Order placed successfully!");
@@ -50,9 +55,9 @@ function OrderForm() {
         setMessage("❌ Failed to place order");
       }
     } catch (error) {
-      console.error(error);
-      setMessage("❌ Server Error");
-    }
+  console.error("FULL ERROR:", error);
+  setMessage("❌ Server Error");
+}
   };
 
   return (

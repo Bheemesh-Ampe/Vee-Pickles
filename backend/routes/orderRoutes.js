@@ -4,25 +4,28 @@ const sendOrderEmail = require("../emailService");
 const express = require("express");
 const router = express.Router();
 
+
 const Order = require("../models/Order");
 
 router.post("/", async (req, res) => {
   try {
+    console.log("ORDER RECEIVED:", req.body);
+
     const order = new Order(req.body);
 
-    // Save order in MongoDB
     await order.save();
 
-try {
-  await sendOrderEmail(order);
-} catch (emailError) {
-  console.error("Email Error:", emailError);
-}
+    try {
+      await sendOrderEmail(order);
+    } catch (emailError) {
+      console.error("Email Error:", emailError);
+    }
 
-res.status(201).json({
-  success: true,
-  message: "Order placed successfully",
-});
+    res.status(201).json({
+      success: true,
+      message: "Order placed successfully",
+      order,
+    });
   } catch (error) {
     console.error("Order Error:", error);
 

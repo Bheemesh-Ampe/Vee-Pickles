@@ -6,7 +6,7 @@ function AdminOrders() {
 
   const fetchOrders = async () => {
    const res = await fetch(
-  "http://localhost:5000/api/orders",
+  `${API_URL}/api/orders`,
   {
     headers: {
       authorization: localStorage.getItem("token"),
@@ -25,7 +25,7 @@ function AdminOrders() {
   }, []);
 
   const markDelivered = async (id) => {
-    await fetch(`http://localhost:5000/api/orders/${id}`, {
+    await fetch(`${API_URL}/api/orders/${id}`, {
       method: "PUT",
       headers: {
   "Content-Type": "application/json",
@@ -47,7 +47,7 @@ function AdminOrders() {
 
     if (!confirmDelete) return;
 
-   await fetch(`http://localhost:5000/api/orders/${id}`, {
+   await fetch(`${API_URL}/api/orders/${id}`, {
   method: "DELETE",
   headers: {
     authorization: localStorage.getItem("token"),

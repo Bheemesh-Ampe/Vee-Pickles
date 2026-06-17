@@ -6,7 +6,7 @@ function AdminOrders() {
   const [orders, setOrders] = useState([]);
 
   const fetchOrders = async () => {
-   const res = await fetch(
+   const res = await fetch( 
   `${API_URL}/api/orders`,
   {
     headers: {

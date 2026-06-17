@@ -12,6 +12,7 @@ function OrderForm() {
   });
 
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -22,6 +23,8 @@ function OrderForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setLoading(true);
 
     try {
       const response =  await fetch(
@@ -41,6 +44,8 @@ const data = await response.json();
 
 console.log("Response:", data);
 
+setLoading(false);
+
       if (data.success) {
         setMessage("✅ Order placed successfully!");
 
@@ -54,7 +59,9 @@ console.log("Response:", data);
       } else {
         setMessage("❌ Failed to place order");
       }
+      
     } catch (error) {
+      setLoading(false);
   console.error("FULL ERROR:", error);
   setMessage("❌ Server Error");
 }
@@ -115,10 +122,9 @@ console.log("Response:", data);
   required
 />
 
-        <button type="submit">
-          Place Order
-        </button>
-      </form>
+        <button type="submit" disabled={loading}>
+  {loading ? "Processing Order..." : "Place Order"}
+</button>
 
       {message && (
         <p className="message">
